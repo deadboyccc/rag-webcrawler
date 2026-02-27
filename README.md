@@ -4,6 +4,8 @@ A production-oriented Java 25 crawler for documentation sites.
 It crawls a single host, respects `robots.txt`, extracts useful text/code,
 and writes JSONL chunks ready for vector-embedding ingestion.
 
+**License:** GNU General Public License v2.0 (same as the Linux kernel). See `LICENSE`.
+
 ### Features
 
 - **Single-host crawl** with URL normalization and deduplication (same scheme, host, and port).
