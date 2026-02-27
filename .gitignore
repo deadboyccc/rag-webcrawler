@@ -1,0 +1,24 @@
+# Maven / Java build output
+target/
+
+# IDE / tooling
+.idea/
+.classpath
+.project
+.settings/
+.vscode/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+
+# Generated crawl outputs
+output/
+
+# Docker / compose extras
+*.pid
+

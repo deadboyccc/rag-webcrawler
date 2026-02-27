@@ -112,7 +112,8 @@ public final class CrawlerApplication {
                     continue;
                 }
 
-                if (visited.markVisited(task.normalizedUrl())) {
+                // Skip only if URL was already visited; markVisited returns true on first visit.
+                if (!visited.markVisited(task.normalizedUrl())) {
                     continue;
                 }
 

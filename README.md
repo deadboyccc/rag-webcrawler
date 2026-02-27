@@ -23,12 +23,12 @@ cd rag-webcrawler
 mvn -DskipTests package
 ```
 
-This produces a shaded jar in `target/` (e.g. `rag-webcrawler-0.1.0-SNAPSHOT-shaded.jar`).
+This produces a shaded jar in `target/` (e.g. `rag-webcrawler-0.1.0-SNAPSHOT.jar`).
 
 ### CLI
 
 ```bash
-java -jar target/rag-webcrawler-0.1.0-SNAPSHOT-shaded.jar \
+java -jar target/rag-webcrawler-0.1.0-SNAPSHOT.jar \
   --url https://docs.example.com/ \
   --output ./output/docs.jsonl \
   --maxtime 20 \

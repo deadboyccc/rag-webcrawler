@@ -3,6 +3,8 @@ package dev.ragcrawler.crawler.output;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import dev.ragcrawler.crawler.parsing.OutputChunk;
 
 import java.io.Closeable;
@@ -23,6 +25,8 @@ public final class JsonlChunkWriter implements Closeable {
     public JsonlChunkWriter(Path path) throws IOException {
         this.out = Files.newOutputStream(path);
         this.mapper = new ObjectMapper();
+        this.mapper.registerModule(new JavaTimeModule());
+        this.mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         JsonFactory factory = mapper.getFactory();
         this.generator = factory.createGenerator(out);
     }
